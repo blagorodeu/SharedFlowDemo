@@ -49,6 +49,7 @@ fun MainScreen(modifier: Modifier = Modifier, sharedFlow: SharedFlow<Int>) {
     val lifecycleOwner = LocalLifecycleOwner.current
     LaunchedEffect(key1 = Unit) {
         sharedFlow.collect {
+            println("Collecting $it")
             messages.add(it)
         }
     }
